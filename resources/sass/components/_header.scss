@@ -1,0 +1,691 @@
+#header-homepage {
+  width: 100%;
+  height: 200px;
+}
+
+// Header dashboard
+#dashboard-header {
+
+  @include responsive(mobile){
+
+    width: 100%;
+    height: 100px;
+    padding: 50px;
+    background-color: $black;
+    border-top: 1px solid lightgrey;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+   }
+
+  #logo {
+
+    height: 60px;
+    width: auto;
+  }
+
+  height: 100px;
+  background-color: $black;
+
+  .container {
+    @include container(90%);
+    height: 100%;
+
+  }
+
+  .navbar {
+
+    height: 100%;
+    color: $white;
+
+    .username {
+
+      color: $venusaur-green;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      height: 100%;
+      @include flex(row, space-between, center);
+
+      #wrapper-logo a {
+
+        @include flex(row, null, center);
+      }
+
+      .has-dropdown {
+        position: relative;
+        @include responsive(mobile) {
+          position: static;
+        }
+
+        .hamburger {
+          @include hamburger($white);
+          color: $black;
+
+          @include responsive(mobile){  
+            font-size: 30px;
+            color: $black;
+            border-radius: 50%;
+
+            .fa-bars {
+              display: none;
+            }
+          }
+
+          & > .icon {
+            margin: 0 5px;
+          }
+        }
+
+        .dropdown {
+          display: none;
+          position: absolute;
+          z-index: 9001; //IT'S OVER 9000
+          top: calc(100% + 2px);
+          left: calc(-50% - 20px);
+          background-color: $white;
+          color: $black;
+          box-shadow: 0 0 3px $user-gray;
+          width: 200px;
+          padding: 10px;
+          border-radius: 10px;
+
+            & > li {
+              padding: 0 10px;
+              width: 100%;
+            }
+
+            & > li:hover {
+              background-color: $aggron-light-gray;
+            }
+
+            .user-field:hover {
+              background-color: $white;
+            }
+
+          @include responsive(mobile){
+            position: absolute;
+            border-radius: 0;
+            height: calc(100vh - 100px);
+            width: 100vw;
+            top: calc(-100vh + 100px);
+            left: 0;
+            background-color: white;
+            text-align: center;
+            font-size: 30px;
+           }
+        }
+
+        .open {
+          display: block;
+          @include responsive(mobile) {
+            @include flex(column, center, center)
+          }
+        }
+      }
+    }
+  }
+}
+
+#apartment-header {
+
+  #logo {
+
+    height: 60px;
+    width: auto;
+  }
+
+  height: 100px;
+  background-color: $white;
+
+  @include responsive(mobile){
+
+    width: 100%;
+    height: 100px;
+    padding: 50px;
+    background-color: white;
+    border-top: 1px solid lightgrey;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+   }
+
+  .container {
+    @include container(90%);
+    height: 100%;
+  }
+
+  .navbar {
+
+    height: 100%;
+    color: $white;
+
+    .username {
+
+      color: #e6027f;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      height: 100%;
+      @include flex(row, space-between, center);
+
+      #wrapper-logo a {
+
+        @include flex(row, null, center);
+      }
+
+      .has-dropdown {
+        position: relative;
+        @include responsive(mobile) {
+          position: static;
+        }
+
+        .hamburger {
+          @include hamburger(#e6027f);
+          color: $white;
+
+          @include responsive(mobile){
+            font-size: 30px;
+            color: $white;
+            border: 4px solid $fuchsia-search;
+            border-radius: 50%;
+
+            .fa-bars{ //icona hamburget(fa-bars)
+              display: none;
+            }
+           }
+
+          & > .icon {
+            margin: 0 5px;
+
+          }
+        }
+
+        .dropdown {
+          display: none;
+          position: absolute;
+          z-index: 9001; //IT'S OVER 9000
+          top: calc(100% + 2px);
+          left: calc(-50% - 20px);
+          background-color: $white;
+          color: $black;
+          box-shadow: 0 0 3px $user-gray;
+          width: 200px;
+          padding: 10px;
+          border-radius: 10px;
+
+            & > li {
+              padding: 0 10px;
+              width: 100%;
+            }
+
+            & > li:hover {
+              background-color: $aggron-light-gray;
+            }
+
+            .user-field:hover {
+              background-color: $white;
+            }
+
+          @include responsive(mobile){
+            position: absolute;
+            border-radius: 0;
+            height: calc(100vh - 100px);
+            width: 100vw;
+            top: calc(-100vh + 100px);
+            left: 0;
+            background-color: white;
+            text-align: center;
+            font-size: 30px;
+           }
+        }
+        .open {
+          display: block;
+          @include responsive(mobile) {
+            @include flex(column, center, center)
+          }
+        }
+      }
+    }
+  }
+}
+
+//Header Landing Page
+.landing-header {
+
+  height: 100vh;
+  position: relative;
+
+  #logo {
+    height: 60px;
+    width: auto;
+  }
+
+  & > img {
+
+    position: absolute; // IMPORTANTE
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .wrapper-new-apartment {
+
+    color: $black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+
+    .button-link {
+
+      display: inline-block;
+      background-color: #ff385c;
+      margin-top: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      color: $white;
+    }
+  }
+
+  .navbar {
+
+    background: linear-gradient(to bottom, $black 5%, transparent);
+
+    .container {
+      @include container(90%);
+      @include flex(column, null, center);
+
+      @include responsive(mobile){
+
+        width: 100%;
+        height: 100px;
+        padding: 50px;
+        background-color: white;
+        border-top: 1px solid lightgrey;
+        position: fixed;
+        z-index: 9999;
+        bottom: 0;
+        left: 0;
+       }
+
+    }
+
+    .nav-links {
+
+      height: 100%;
+      width: 100%;
+      @include flex(row, space-between, center);
+
+      @include responsive(mobile){
+        @include flex(row, space-around, center);
+
+       }
+
+      #wrapper-logo {
+
+        flex-grow: 1;
+
+        .logo-b{
+          width: 60px;
+          height: 60px;
+          margin-top: 10px;
+          background-image: url('../assets/lg_color0_bianco.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          @include responsive(mobile){
+            background-image: url('../assets/lg_color1.png');
+            margin-top: 0px;
+           }
+
+        }
+
+
+      }
+
+      .hamburger {
+
+        @include hamburger($white);
+
+        @include responsive(mobile){
+          font-size: 30px;
+          color: $fuchsia-search;
+          border:4px solid $fuchsia-search;
+          border-radius: 50%;
+
+          .fa-bars{ //icona hamburget(fa-bars)
+            display: none;
+          }
+         }
+
+        & > .icon {
+
+          margin: 0 5px;
+        }
+      }
+
+      .has-dropdown {
+
+        position: relative;
+        @include responsive(mobile) {
+          position: static;
+        }
+
+        .dropdown {
+          display: none;
+          position: absolute;
+          z-index: 9001; //IT'S OVER 9000
+          top: calc(100% + 2px);
+          left: calc(-50% - 20px);
+          background-color: $white;
+          color: $black;
+          box-shadow: 0 0 3px $user-gray;
+          width: 200px;
+          padding: 10px;
+          border-radius: 10px;
+
+            & > li {
+              padding: 0 10px;
+              width: 100%;
+            }
+
+            & > li:hover {
+              background-color: $aggron-light-gray;
+            }
+
+            .user-field:hover {
+              background-color: $white;
+            }
+
+          @include responsive(mobile){
+            position: absolute;
+            border-radius: 0;
+            height: calc(100vh - 100px);
+            width: 100vw;
+            top: calc(-100vh + 100px);
+            left: 0;
+            background-color: white;
+            text-align: center;
+            font-size: 30px;
+           }
+        }
+
+        .open {
+          display: block;
+
+          @include responsive(mobile) {
+            @include flex(column, center, center)
+          }
+        }
+      }
+    }
+
+    .wrapper-search-bar {
+
+      @include flex(row, center, center);
+      padding: 20px 40px;
+      border-radius: 40px;
+      transition: all .5s ease-out;
+
+      @include responsive(mobile){
+        background-color: $search-fuchsia;
+        border-radius: 0;
+       }
+
+      .search-bar {
+
+        @include flex(row, center, center);
+        width: 100%;
+
+        .wrapper-form-fields {
+
+          @include flex(column, center, center);
+          min-height: 100px;
+          background-color: $white;
+          padding: 20px;
+
+          @include responsive(mobile){
+            width: 50%;
+           }
+        }
+
+        .first {
+          padding-left: 100px;
+          border-top-left-radius: 50px;
+          border-bottom-left-radius: 50px;
+
+        }
+
+        .last {
+          border-top-right-radius: 50px;
+          border-bottom-right-radius: 50px;
+        }
+
+        input {
+
+          border: 0;
+
+          &:focus {
+
+            outline: 0;
+          }
+        }
+
+        .search {
+
+          padding: 20px;
+          background-color: #ff385c;
+          color: $white;
+          border: 0;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .fixed-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 0;
+      z-index: 10000;
+      width: 100%;
+      background-color: $white;
+      border-radius: 0;
+      box-shadow: 0 0 4px rgba(0,0,0,.5);
+    }
+  }
+
+  
+}
+
+// Header pagina Diventa un Host
+.register-header {
+
+  background-color: $black;
+  height: 100px;
+  color: $white;
+
+  .container {
+
+    @include container(90%);
+    @include flex(row, null, center);
+    height: 100%;
+  }
+
+  .navbar {
+
+    flex-grow: 1;
+
+    .nav-links {
+
+      @include flex(row, space-between, center);
+
+      @include responsive(mobile){
+        justify-content: flex-start;
+       }
+
+      & > li > ul {
+
+        @include flex(row, null, center);
+
+        & > li {
+
+          margin: 0 5px;
+        }
+      }
+    }
+
+    .button-link {
+
+      display: inline-block;
+      background-color: $venusaur-green;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+  }
+}
+
+// div più esterno
+.outer-container {
+  height: 100%;
+  @include container(90%);
+}
+
+.bigger-header {
+  height: 100%;
+  width: 100%;
+}
+
+.bigger-header div {
+  height: 50%;
+  @include flex(row, null, null);
+}
+
+
+// ---------- FIRST SECTION OF header -----------------
+
+.bigger-header div:first-of-type {
+  @include flex(row, space-between, null);
+
+  // LOGO
+  span:first-of-type {
+    @include flex(row, center, center);
+
+    img {
+      @include flex(row, center, center);
+      width: auto;
+      height: 50px;
+    }
+  }
+
+  // Questo span contiene "diventa un host e il login"
+  span:last-of-type {
+    padding-top: 20px;
+    @include flex(row, center, center);
+
+    a:first-of-type {
+      padding: 10px;
+      border-radius: 30px;
+    }
+
+    a:first-of-type:hover {
+      background-color: $white;
+    }
+
+    a:nth-child(1) {
+      margin-right: 20px;
+      font-weight: bolder;
+    }
+
+    // LOGIN
+    a:nth-child(2) {
+      font-size: 25px;
+      @include flex(row, space-around, center);
+      background-color: $white;
+      width: 110px;
+      height: 60px;
+      border-radius: 30px;
+
+      // Icona utente (omino)
+      i:last-of-type {
+        color: $white;
+        background-color: $user-gray;
+        padding: 10px;
+        border-radius: 100%;
+      }
+
+    } // Ultima a-href con "hamburger" e "omino/utente"
+
+  } // FINE Ultimo span con "diventa host", "hamburger" e "omino/utente"
+
+} // END OF .bigger-header div:first-of-type
+
+
+
+// ---------- SECOND SECTION OF header (NAVBAR1) -----------------
+
+
+.bigger-header div:last-of-type {
+  @include flex(row, center, center);
+  width:100%;
+
+  .navbar1 {
+    @include flex(row, center, center);
+    width: 70%;
+    height: 80px;
+    background-color: $white;
+    border-radius: 50px;
+
+    div {
+      width: calc(100% / 4);
+      height: 100%;
+      border-radius: 50px;
+      @include flex(column, space-around, center);
+    }
+
+    div:hover {
+      background-color: $navbar1-gray;
+    }
+
+    div:nth-child(2) {
+      margin: 0px 5px;
+    }
+
+    div:nth-child(3) {
+      margin-right: 5px;
+    }
+
+    // Ultimo div con Opiti e lente'ingrandimento
+    div:last-of-type {
+      @include flex(row, space-around, center);
+
+      // Questa è la lente d'ingrandimento (SEARCH)
+      a:last-of-type {
+        @include flex(row, center, center);
+        background-color: $fuchsia-search;
+        color: $white;
+        font-size: 25px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+      }
+
+      a:last-of-type:hover {
+        background-color: $darker-fuchsia-search;
+      }
+
+    }
+
+  } // END OF NAVBAR1
+
+} // END OF .bigger-header div:last-of-type

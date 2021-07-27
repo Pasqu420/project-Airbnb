@@ -1,0 +1,141 @@
+section#edit-section{
+    width: 800px;
+    margin: auto;
+    padding-top: 50px;
+    @include responsive(mobile){
+        width: 400px;
+    }
+    
+    h2{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-complit{
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-between;
+        @include responsive(mobile){
+            display: block;
+        }
+        .form-errors {
+
+            font-size: 12px;
+            flex-basis: 100%;
+            text-align: center
+        }
+
+        .form-text{
+            @include flex(column, center, null);
+
+            .form-text-elem{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 5px 0px; 
+
+                .error {
+                    border: 2px solid #f44336;
+                }
+                
+                input{
+                    margin-left: 5px;
+                    background-color: $aggron-light-gray;
+                    padding: 5px 10px;
+                    border: 0;
+                    border-radius: 20px;
+                    margin-left: 20px;
+
+                    &:focus {
+                        outline: 0;
+                    }
+
+                    &:hover {
+
+                        background-color: $steelix-gray;
+                        transition: 0.2s;
+                    }
+                }
+
+                textarea{
+                    resize: none;
+                    overflow-y: auto;
+                    background-color: $aggron-light-gray;
+                    padding: 10px;
+                    border: 0;
+                    border-radius: 20px;
+                    transition: all .4s;
+                    width: 100%;
+                    flex-grow: 1;
+                    &:focus {
+
+                        outline: 0;
+                    }
+                }
+
+            }
+
+        }
+        .form-service{
+            margin-left: 50px;
+            @include responsive(mobile){
+                margin-left: 0px;
+                padding: 20px;
+            }
+        }
+        .form-select{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            label {
+                flex-grow: 1;
+                padding: 2px;
+                border-radius: 5px;
+                transition: all ease-in .5s;
+                text-align: left;
+                margin: 2px;
+                &:hover {
+                    background-color: $venusaur-green;
+                    color: $white;
+                }
+            }
+
+            .hidden_check:checked ~ label {
+               background-color: $venusaur-green;
+               color: $white;
+            } 
+
+            .hidden_check {
+                visibility: hidden;
+            }
+            // input{
+            //     margin-left: 20px;
+            // }
+        }
+
+
+    }
+    .form-btn{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 30px 0px;
+
+        .button-form{
+            margin-left: 5px;
+            padding: 10px 15px;
+            border: 0;
+            border-radius: 20px;
+            background-color: $venusaur-green;
+            font-family: $font-family-sans-serif;
+            color: white;
+
+            &:hover {
+
+                background-color: $grovyle-dark-green;
+                transition: 0.2s;
+            }
+        }
+    }
+}

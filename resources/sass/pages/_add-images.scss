@@ -1,0 +1,64 @@
+#section-add-images{
+    text-align: center;
+    padding: 30px 0;
+    .container{
+        @include container(600px);
+        padding: 15px;
+        background-color: $aggron-light-gray;
+        border-radius: 20px;
+        border: 1px solid $steelix-gray;
+        margin-bottom: 60px;
+        text-align: center;
+        
+        @include responsive(tablet){
+            width: 380px;
+        }
+        
+        h1{
+            padding-top:20px;
+            color: $venusaur-green;
+        
+        }
+        .container-form-add{
+            width: 100%;
+            margin: 30px auto;
+            .add-image{
+                margin: 18px auto;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 20px;
+                @include responsive(tablet){
+                    display: block;
+                }
+                .label-input{
+                    .label-image{
+                        font-size: 18px;
+                        color: $venusaur-green;
+                        padding-top: 5px;
+                        padding-left: 10px;
+                    }
+                    .input-image{
+                        margin: 15px auto;
+                        cursor: pointer;
+                    }
+                }
+                button{
+                    @extend %venusaur-green-button;
+                    font-family: "Poppins", sans-serif;
+                    border: 0;
+                    cursor: pointer;
+                    margin-bottom: 10px;
+                }
+                &:hover{
+                    background-color: $white;
+                    padding: 0 10px;
+                    box-shadow: 5px 5px 5px #dedede;
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+}

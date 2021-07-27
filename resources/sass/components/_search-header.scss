@@ -1,0 +1,282 @@
+#header-search {
+    font-family: "Nunito", sans-serif;
+    min-height: 220px;
+    @include flex(row, space-evenly, null);
+    @include container(90%);
+    flex-wrap: wrap;
+
+    // MEDIA QUERY
+    @include responsive(mobile) {
+        @include container(100%);
+        @include flex(column, flex-start, null);
+        max-height: 800px;
+        min-height: 0;
+    }
+
+    .top-header-search {
+        width: 100%;
+        height: 50%;
+        @include flex(row, center, center);
+
+        // MEDIA QUERY
+        @include responsive(mobile) {
+            @include flex(row, center, center);
+            background-color: $fuchsia-search;
+            height: 100px;
+        }
+
+        .logo {
+            // MEDIA QUERY
+            @include responsive(mobile) {
+                display: none;
+            }
+
+            a {
+                width: 100%;
+
+                img {
+                    margin-top: 10px;
+                    height: auto;
+                    width: 120px;
+                }
+            } // fine A-HREF
+        } // fine LOGO
+
+        .filter {
+            flex: 1;
+            @include flex(row, center, center);
+
+            .dove-andare label,
+            .wrapper-form-fields,
+            .numero-letti {
+                // MEDIA QUERY
+                @include responsive(mobile) {
+                    display: none;
+                }
+            }
+
+            div {
+                margin-right: 30px;
+            }
+
+            input {
+                height: 35px;
+                border: 1px solid rgba(50, 50, 50, 0.3);
+                border-radius: 10px;
+            }
+
+            #lente {
+                a {
+                    @include flex(row, center, center);
+                    width: 50px;
+                    height: 50px;
+                    color: $white;
+                    background-color: $fuchsia-search;
+                    border-radius: 50px;
+                    transition: all .5s;
+
+                    // MEDIA QUERY
+                    @include responsive(mobile) {
+                        background-color: $white;
+                        color: $fuchsia-search;
+                    }
+
+                    &:hover {
+                        background-color: $mesprit-fuchsia;
+                    }
+                } // FINE A-HREF
+            }
+            // .activefilter {
+            //     @include responsive(mobile) {
+            //         background-color: #fa8a8a !important;
+            //     }
+            // }
+
+            .filtrini {
+                // MEDIA QUERY
+                width: 50px;
+                height: 50px;
+                color: $white;
+                background-color: $fuchsia-search;
+                border-radius: 50px;
+                @include flex(row, center, center);
+                transition: all .5s;
+
+                &:hover {
+                    background-color: $mesprit-fuchsia;
+                }
+
+                @include responsive(mobile) {
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    color: $fuchsia-search;
+                    background-color: $white;
+                    border-radius: 50px;
+                    @include flex(row, center, center);
+
+                    &:hover {
+                        color: $mesprit-fuchsia;
+                    }
+                    > a {
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            } // fine filtrini
+        } // fine filtri
+    }
+
+    .lower-header-search {
+        height: 50%;
+        @include flex(row, null, center);
+        flex-wrap: wrap;
+
+        ul {
+            width: 100%;
+            @include flex(row, space-evenly, center);
+            flex-wrap: wrap;
+            .active {
+                background-color: $fuchsia-search;
+                color: white;
+                border: none;
+            }
+
+            li {
+                padding: 13px 13px;
+                margin: 0 2px;
+                border-radius: 30px;
+                border: 2px solid rgba(50, 50, 50, 0.3);
+                transition: all 0.4s;
+                // MEDIA QUERY
+                @include responsive(mobile) {
+                    margin-top: 10px;
+                }
+            }
+
+            li:hover {
+                background-color: $fuchsia-search;
+                color: $white;
+            }
+        } // FINE UL
+    } // fine di lower-header search
+    #search-apartments-navbar {
+        @include responsive(mobile){
+            @include flex(row, center, center);
+            padding: 0 10%;
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            border-top: 1px solid lightgrey;
+            position: fixed;
+            z-index: 9999;
+            bottom: 0;
+            left: 0;
+        }
+
+        .nav-links {
+            width: 100%;
+            @include flex(row, space-between, center);
+        }
+        #wrapper-logo {
+            display: none;
+
+            @include responsive(mobile) {
+                display: block;
+            }
+        }
+
+        #logo {
+
+            height: 60px;
+            width: auto;
+        }
+
+        .username {
+
+            color: #e6027f;
+            font-weight: 600;
+        }
+
+        
+
+        .has-dropdown {
+            position: relative;
+            @include responsive(mobile) {
+                position: static;
+            }
+
+            .hamburger {
+                @include hamburger(#e6027f);
+                color: $white;
+      
+                @include responsive(mobile){
+                  font-size: 30px;
+                  color: $white;
+                  border: 4px solid $fuchsia-search;
+                  border-radius: 50%;
+      
+                  .fa-bars{ //icona hamburget(fa-bars)
+                    display: none;
+                  }
+                 }
+      
+                & > .icon {
+                  margin: 0 5px;
+      
+                }
+            }
+
+            .dropdown {
+                display: none;
+                position: absolute;
+                z-index: 9001; //IT'S OVER 9000
+                top: calc(100% + 2px);
+                left: calc(-50% - 20px);
+                background-color: $white;
+                color: $black;
+                box-shadow: 0 0 3px $user-gray;
+                width: 200px;
+                padding: 10px;
+                border-radius: 10px;
+      
+                  & > li {
+                    padding: 0 10px;
+                    width: 100%;
+                  }
+      
+                  & > li:hover {
+                    background-color: $aggron-light-gray;
+                  }
+      
+                  .user-field:hover {
+                    background-color: $white;
+                  }
+      
+                @include responsive(mobile){
+                  position: absolute;
+                  z-index: 9999;
+                  border-radius: 0;
+                  height: calc(100vh - 100px);
+                  width: 100vw;
+                  top: calc(-100vh + 100px);
+                  left: 0;
+                  background-color: white;
+                  text-align: center;
+                  font-size: 30px;
+                 }
+              }
+    
+            .open {
+                display: block;
+                @include responsive(mobile) {
+                    @include flex(column, center, center)
+                }
+            }
+        }
+        
+    }
+} // fine di top-header search

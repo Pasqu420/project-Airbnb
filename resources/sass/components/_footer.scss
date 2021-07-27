@@ -1,0 +1,136 @@
+footer {
+
+  border-top: 1px solid rgba(50, 50, 50, .1);
+  background-color: $footer-gray;
+
+  // CONTAINER FOOTER SECTIONS (85% - 15% HEIGHT)
+  .bigger-footer {
+    @include container(80%);
+
+    @include responsive(mobile){
+      margin-bottom: 100px;
+    }
+
+    // INIZIO FOOTER TOP SECTION (85% HEIGHT)
+    .footer-top-section {
+      @include flex(row, null, flex-start);
+      width: 100%;
+      padding: 40px 0px;
+      border-bottom: 1px solid rgba(50, 50, 50, .1);
+      padding: 40px 0;
+
+      @include responsive(mobile){
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      // UL NAV LINKS
+      .footer-nav-links {
+        width: calc(100% / 4);
+        line-height: 200%;
+
+        // MEDIA QUERY
+        @include responsive(mobile) {
+          margin-bottom: 50px;
+          width: 100%;
+        }
+
+       
+  
+        h3 {  
+          font-size: 14px;
+          text-transform: uppercase;
+
+          @include responsive(mobile){
+            margin-top: 20px;
+          }
+        }
+
+        & > li a:hover {
+          text-decoration: underline;
+        }
+
+      }
+    }
+
+    //INIZIO FOOTER BOTTOM SECTION (15% HEIGHT)
+    .footer-bottom-section {
+      @include flex(row, null, center);
+      width: 100%;
+      padding: 40px 0;
+
+      // Tutti e due gli UL
+      .footer-nav-links {
+        @include flex(row, null, center);
+        height: 100%;
+
+        // MEDIA QUERY
+        @include responsive(mobile) {
+          display:none;
+        }
+
+        h3 {
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+      }
+
+      // SITE INFOS
+      #site-infos {
+        flex-grow: 1;
+
+        @include responsive(mobile){
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          align-items: flex-start;
+        }
+
+        li {
+          margin-right: 20px;
+
+          & > a:hover {
+
+            text-decoration: underline;
+          }
+        }
+      }
+
+      // SOCIAL LINKS
+      #social-links {
+        @include flex(row, flex-end, center);
+
+        @include responsive(mobile){
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          align-items:flex-start;
+        }
+
+        .social {
+          font-size: 18px;
+          text-decoration: none;
+        }
+
+        span {
+          text-decoration: underline;
+        }
+
+        a:hover {
+          opacity: 0.4;
+        }
+
+        li {
+          margin: 0 15px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  } // END BIGGER FOOTER
+
+ 
+} // fine di footer

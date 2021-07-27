@@ -1,0 +1,31 @@
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin container($width) {
+  margin: 0 auto;
+  width: $width;
+}
+
+@mixin hamburger($bg-color) {
+
+  @include flex(row, center, center);
+  background-color: $bg-color;
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 20px;
+}
+
+@mixin responsive($device) {
+
+  @if $device == mobile {
+    @media screen and(max-width: 420px) {@content};
+  }
+
+  @if $device == tablet {
+    @media screen and(max-width: 620px) {@content};
+  }
+}

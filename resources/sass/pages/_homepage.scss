@@ -1,0 +1,190 @@
+.contain-main {
+    height: 100%;
+
+    section:only-of-type {
+        width: 100%;
+        @include container(90%);
+
+        ul:first-of-type {
+            height: 400px;
+            @include flex(column, flex-end, null);
+
+            li:nth-child(1) {
+                @include flex(row, flex-start, space-envely);
+
+                a {
+                    margin-top: 5px;
+                }
+
+                span {
+                    @include flex(row, center, center);
+                    width: 70px;
+                    height: 40px;
+                    border-radius: 5px;
+                    margin-left: 20px;
+                    font-size: 20px;
+                    background-color: $black;
+                    color: $white;
+                }
+            }
+
+            li:nth-child(2) {
+                font-size: 30px;
+            }
+        } // FINE DEL PRIMO UL
+
+        button {
+            margin-top: 20px;
+            font-weight: bolder;
+            width: 150px;
+            height: 50px;
+            background-color: $black;
+            color: $white;
+            border-radius: 10px;
+            border: none;
+        }
+    } // FINE DELL'UNICO SECTION FIGLIO DI HOMEPAGE
+}
+
+.outer-jumbotron {
+    margin: 10px auto;
+    width: 90%;
+    height: auto;
+    text-align: center;
+
+    .title-outer-jmb {
+        margin-top: 100px;
+        margin-bottom: 30px;
+    }
+
+    .slider-main {
+        @include flex(row, center, center);
+
+        .fa-chevron-left,
+        .fa-chevron-right {
+            cursor: pointer;
+            font-size: 40px;
+            color: $search-fuchsia;
+        }
+
+        .apartment-samples {
+            font-size: 20px;
+            @include container(90%);
+            @include flex(row, space-between, center);
+            overflow: hidden;
+            scroll-behavior: smooth;
+
+            .flags {
+                width: 220px;
+                height: 220px;
+                overflow: hidden;
+                position: relative;
+                border-radius: 10px;
+                margin-right: 20px;
+                
+                & > a {
+                    position: absolute;
+                    background-color: transparent;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 100;
+                }
+
+                // .layover {
+                //     
+                //     position: absolute;
+                    
+                //     transform: translateY(100%);
+                //     z-index: 100;
+                //     transition: all .5s;
+                // }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .title { 
+                    color: $white;
+                    background-color: rgba(0,0,0,.6);
+                    position: absolute;
+                    bottom: 0;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    transform: translateY(100%);
+                    transition: all .5s;
+                    z-index: 100;
+                    
+                    .test {
+                        height: 100%;
+                        padding-bottom: 5px;
+                        padding-right: 5px;
+                        @include flex(row, flex-end ,flex-end);
+                    }
+
+                    a {
+                        display: inline-block; 
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }  
+
+            .flags:hover .layover,
+            .flags:hover > .title {
+                transform: translateY(0%);
+            }
+        }
+    }
+
+    .section-host {
+        display: flex;
+        justify-content: center;
+        margin-top: 120px;
+        margin-bottom: 40px;
+
+        .host {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 90%;
+            height: 350px;
+            background-image: url(../assets/diventaHost.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: start;
+
+            .h1-host {
+                margin-bottom: 5px;
+            }
+
+            .p-host {
+                margin: 5px 0;
+            }
+
+            .btn-host_hmpages {
+                @include flex(row, center, center);
+                width: 150px;
+                height: 40px;
+                background-color: $search-fuchsia;
+                color: white;
+                font-family: "Poppins", sans-serif;
+                text-transform: uppercase;
+                border: none;
+                border-radius: 5px;
+                margin-top: 15px;
+            }
+
+            .img-host {
+                width: 50px;
+                height: auto;
+            }
+        }
+    }
+}

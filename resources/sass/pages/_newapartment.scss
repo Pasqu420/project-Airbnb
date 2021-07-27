@@ -1,0 +1,163 @@
+section#newapartment-section{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color:$venusaur-green;
+    color:white;
+    text-align: center;
+
+
+    h2{
+        margin: 30px 0px;
+        text-align: center;
+    }
+
+    .form-nw-apartment{
+        @include flex(column, center, center);
+        width: 800px;
+        margin: auto;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+        
+        @include responsive(mobile){
+            width: 350px;
+        } 
+
+        &:hover{
+            border: 1px solid $grovyle-dark-green;
+            transition: 0.2s;
+        }
+
+        .form-nw-apartment-elm-tot {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: auto;
+            padding: 20px 0px;
+            //background-color: blueviolet;
+
+            @include responsive(mobile){
+                width: 100%;
+              } 
+
+
+            .elm-form{
+                @include flex(row, space-between, null);
+                padding: 10px 0;
+
+                .error {
+                    border: 2px solid #f44336;
+                }
+
+                input {
+
+                    background-color: $aggron-light-gray;
+                    padding: 5px 10px;
+                    border: 0;
+                    border-radius: 20px;
+                    transition: all .4s;
+
+                    &:focus {
+                        outline: 0;
+                    }
+
+                    &:hover {
+
+                        background-color: $steelix-gray; 
+                    }
+                }
+            }
+
+            .elm-form.textarea {
+                @include flex(column, center, flex-start);
+
+                .error {
+                    border: 2px solid #f44336;
+                }
+                
+                textarea{
+                    resize: none;
+                    overflow-y: auto;
+                    background-color: $aggron-light-gray;
+                    padding: 10px;
+                    border: 0;
+                    border-radius: 20px;
+                    transition: all .4s;
+                    width: 100%;
+                    flex-basis: 100px;
+
+                    &:focus {
+
+                        outline: 0;
+                    }
+                }
+            }
+
+            .elm-form-img{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+        }
+
+        .form-errors {
+            font-size: 12px;
+        }
+    }
+
+    .form-elem-service-tot{
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+
+        &:hover{
+            border: 1px solid $grovyle-dark-green;
+            transition: 0.2s;
+        }
+
+        .form-service-container{
+
+            margin: auto;
+
+            .form-elem-service-elm{
+                @include flex(row, flex-start, center);
+                margin: 2px;
+                label {
+                    flex-grow: 1;
+                    padding: 2px;
+                    border-radius: 5px;
+                    transition: all ease-in .5s;
+                    text-align: left;
+
+                    &:hover {
+                        background-color: darkslategrey;
+                    }
+                }
+
+                .hidden_check:checked ~ label {
+                   background-color: darkslategrey;
+                } 
+
+                .hidden_check {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
+    button{
+        margin-top: 50px;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 20px;
+        background-color: white ;
+        font-family: $font-family-sans-serif;
+        color: $venusaur-green;
+    }
+
+}

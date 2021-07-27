@@ -1,0 +1,71 @@
+div#success-message{
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: $aggron-light-gray;
+
+    .cnt-success-msg{
+        
+        width: 50%;
+        height: auto;
+        margin: 100px 0px;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        border-radius: 20px;
+        border: 1px solid $search-fuchsia;
+
+        h2{
+            color: $search-fuchsia;
+            margin-bottom: 10px;
+
+        }
+
+        .icon-confirm{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 70px;
+            color: $search-fuchsia;
+            
+            i{ 
+                animation: bounce 0.9s infinite;
+            }
+
+            .box{
+                width: 67px;
+                height: 10px;
+                margin: auto;
+                background-color: $aggron-light-gray;
+                border-radius: 50%;
+                
+            }
+        }
+
+        .text-confirm{
+            margin-top: 15px;
+        }
+
+        button{
+            border: none;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: $steelix-gray;
+            color:$search-fuchsia;
+            cursor: pointer;
+
+            &:hover{
+                background-color: $user-gray;
+                color: white;
+                transition: 0.2s;
+            }
+        }
+    }
+
+
+}
+

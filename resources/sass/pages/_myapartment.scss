@@ -1,0 +1,178 @@
+section#my-apartments {
+
+  padding: 40px 0;
+
+    .container {
+      @include container(90%);
+  
+    }
+  
+    .button-link {
+  
+      @extend %venusaur-green-button;
+      margin: 0px 5px;
+  
+      &:hover {
+  
+       background-color: $grovyle-dark-green;
+  
+      }
+    }
+  
+    .delete:hover {
+      background-color: $user-gray;
+    }
+  
+    .wrapper-user-add {
+      @include flex(row, space-between, center);
+      padding-top: 60px;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+  
+      .username {
+        color: $venusaur-green;
+      }
+
+      @include responsive(mobile){
+        @include flex(column, null, center);
+
+        h1{
+          @include flex(column, null, center);
+
+          .h1-voce{
+            font-size: 15px;
+            margin-bottom: 20px;
+          }
+        }
+        .separator{
+          display: none;
+        }
+      }
+    }
+  
+    .wrapper-apartment {
+  
+      @include flex(column, null, null);
+      padding: 20px;
+  
+      &:nth-child(even) {
+        background-color: $aggron-light-gray;
+      }
+  
+      .apartment-main-infos {
+        @include flex(row, space-around, center);
+        flex-wrap: wrap;
+
+
+        .apartment-title {
+          flex-grow: 1;
+          cursor: pointer;
+
+          @include responsive(mobile){
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        .infos {
+          @include flex(row, null, center);
+
+          li{
+
+            @include responsive(mobile){
+              text-align: center;
+              .button-link{
+                border-radius: 0;
+                margin:5px 0;
+                width: 70px;
+              }
+
+              .left{
+                border-radius: 15px 0px 0px 15px;
+              }
+
+              .right{
+                border-radius: 0px 15px 15px 0px;
+              }
+              span{
+                display: none;
+              }
+              i{
+                font-size: 20px;
+                
+              }
+  
+            }
+
+            
+          }
+
+        }
+        .apartment-details {
+          margin-left: 20px;
+          font-size: 12px;
+          cursor: pointer;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+
+        }
+      }
+  
+      .details {
+        max-height: 420px;
+        
+        .edit-apartment {
+          @include flex(row, flex-start, center);
+          & > li {
+            margin: 0 5px;
+          }
+
+          @include responsive(mobile) {
+            span {
+              display: none;
+            }
+          }
+        }
+
+        .button-link{
+          margin: 20px 0 20px;
+        }
+        @include responsive(mobile){
+          margin: 10px;
+        }
+      }
+  
+      .slide-down-enter-active {
+        transition: all 1s;
+      }
+  
+      .slide-down-leave-active {
+        transition: all .5s;
+      }
+  
+      .slide-down-enter, .slide-down-leave-to {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+  
+     
+      .arrow {
+        transform: rotate(0);
+        transition: all .5s;
+  
+        &:hover{
+          color: $venusaur-green;
+        }
+      }
+  
+      .rotate {
+        transition: all .5s;
+        transform: rotate(180deg);
+      }
+  
+    }
+  
+  }

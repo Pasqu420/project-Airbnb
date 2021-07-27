@@ -1,0 +1,92 @@
+div#sponsor-apartament{
+
+    width: 60%;
+    margin: auto;
+    margin-top: 60px;
+
+    // MEDIA QUERY
+    @include responsive(mobile) {
+      height: auto;
+    }
+
+    .title-sponsor{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .label-sponsor-contain{
+      @include flex(row, space-around, null);
+      flex-wrap: wrap;
+
+        .label-sponsor{
+            width: 250px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid lightgrey;
+            border-radius: 20px;
+
+            &:hover{
+                background-color: yellowgreen;
+                box-shadow: 5px 5px 5px #dedede;
+                transition: 0.2s;
+
+            }
+
+            .title-label{
+                margin-top: 20px;
+                font-size: 20px;
+                text-transform:uppercase;
+            }
+
+            .price-sponsor{
+
+                font-size: 50px;
+
+                .euro-price{
+                    font-size: 30px;
+                }
+
+            }
+
+            .btn-sponsor{
+                margin-top: 30px ;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background-color: $green;
+                font-family: $font-family-sans-serif;
+                font-size: 15px;
+                color: white;
+
+            }
+
+        }
+
+    }
+    .bnt-spons-send{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+
+        // MEDIA QUERY
+        @include responsive(mobile) {
+          margin-bottom: 30px;
+        }
+
+        button{
+            padding: 10px 15px;
+            border: 0;
+            border-radius: 20px;
+            background-color: $venusaur-green;
+            font-family: $font-family-sans-serif;
+            color: white;
+        }
+     }
+
+}

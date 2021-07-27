@@ -1,0 +1,94 @@
+#stats {
+    padding: 50px 0;
+
+    .container {
+        @include container(90%);
+    }
+
+    .username {
+        color: $venusaur-green;
+    }
+
+    .stats-menu {
+        @include flex(row, flex-start, center);
+        height: 40px;
+        width: 100%;
+        background-color: $venusaur-green;
+
+        & > li {
+            cursor: pointer;
+            color: $white;
+            font-weight: 600;
+            height: 100%;
+            @include flex(row, center, center);
+            transition: background-color 0.5s;
+
+            // .button-link {
+            //     height: 100%;
+            // }
+
+            &:hover {
+                background-color: $grovyle-dark-green;
+            }
+
+            a {
+                display: inline-block;
+                padding: 10px;
+            }
+        }
+
+        .active {
+            background-color: $grovyle-dark-green;
+        }
+    }
+
+    .wrapper-statistics {
+        @include flex(row, null, flex-start);
+
+        @include responsive(mobile) {
+            @include flex(column, center, center);
+        }
+
+        aside {
+            flex-basis: 30%;
+            @include responsive(mobile) {
+                width: 100%;
+            }
+            .years-list li:nth-child(odd) {
+                background-color: $aggron-light-gray;
+            }
+
+            .years-list li {
+                a {
+                    display: inline-block;
+                    text-align: center;
+                    height: 100%;
+                    width: 100%;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $grovyle-dark-green;
+                    }
+                }
+            }
+        }
+
+        .wrapper-graph {
+            width: 70vw;
+            flex-basis: 70%;
+            @include flex(row, center, center);
+
+            @include responsive(media) {
+                width: 100%;
+            }
+
+            .no-stats-text {
+                background-color: $aggron-light-gray;
+                padding: 50px 10px;
+                border-radius: 20px;
+                margin-top: 10px;
+                text-align: center;
+            }
+        }
+    }
+}

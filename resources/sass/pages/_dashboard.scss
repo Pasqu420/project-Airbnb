@@ -1,0 +1,152 @@
+section#user-dashboard {
+    padding: 50px 0;
+    
+    .container {
+
+        @include container(90%);
+        @include flex(column, null, center);
+
+        @include responsive(mobile) {
+            @include container(100%);
+        }
+    }
+
+    h1 {
+
+        font-size: 40px;
+        text-align: center;
+        padding: 0 0 40px;
+    }
+
+    .username {
+
+        color: $venusaur-green;
+    }
+
+    .wrapper-with-apartments {
+
+        @include flex(row, center, center);
+        @extend %dashboard-content-label;
+        border-top-left-radius: 0;
+        background-color: $footer-gray;
+        position: relative;
+        padding: 20px;
+
+        @include responsive(mobile) {
+            padding: 20px;
+        }
+
+        .user-infos, .apartments-link {
+            display: none;
+        }
+
+        .user-infos.active {
+
+            @include flex(row, null, center);
+            height: 100%;
+            width: 100%;
+            @include responsive(mobile) {
+                padding: 10px;
+                @include flex(column, center, center);
+            }
+        }
+
+        .wrapper-image-placeholder {
+
+            width: 50%;
+            transition: all .5s;
+
+            @include responsive(mobile) {
+                margin-top: 20px;
+                border-radius: 50%;
+            }
+
+            img {
+
+                max-height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+                border-bottom-left-radius: 15px;
+
+                @include responsive(mobile) {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .active {
+            display: block;
+        }
+
+        .wrapper-dashboard-labels {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            z-index: 2;
+            @include flex(row, flex-start, center);
+            background-color: $venusaur-green;
+            width: 100%;
+
+            @include responsive(mobile) {
+                @include flex(column, center, center);
+            }
+
+            .dashboard-label {
+
+                @include flex(row, center, center);
+                padding: 10px;
+                background-color: $venusaur-green;
+                color: $white;
+                height: 40px;
+                transition: background-color .5s;
+                cursor: pointer;
+
+                @include responsive(mobile) {
+                    width: 100%;
+                    height: 25px;
+                }
+
+                &:hover {
+
+                    background-color: $grovyle-dark-green;
+                }
+            }
+
+            .dashboard-label.active {
+                background-color: $grovyle-dark-green;
+            }
+        }
+
+        .apartments-link a {
+
+            @include flex(row, center, center);
+            @extend %venusaur-green-button;
+
+            @include responsive(mobile) {
+                margin-top: 20px;
+                font-size: 10px;
+            }
+
+            &:hover {
+                background-color: $grovyle-dark-green;
+            }
+        }
+    }
+
+    .wrapper-no-apartments {
+
+        @extend %dashboard-content-label;
+        @include flex(column, center, center);
+
+        .add-apartment-link {
+
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: $venusaur-green;
+            color: $white;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+    }
+}

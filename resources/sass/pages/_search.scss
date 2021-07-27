@@ -1,0 +1,118 @@
+// Fonts
+.search-page {
+    @include flex(row, null, null);
+    @include container(90%);
+    font-family: "Nunito", sans-serif;
+
+    // debug
+    height: 82.3vh;
+    > div {
+        flex: 1;
+    }
+
+    .left-section {
+        position: relative;
+        width: 45%;
+        border-top: 1px solid rgba(50, 50, 50, 0.3);
+        overflow: auto;
+        padding-top: 30px;
+        @include flex(column, null, null);
+
+        // MEDIA QUERY
+        @include responsive(mobile) {
+            border-top: none;
+        }
+
+        .row-with-img-text {
+            height: 300px;
+            @include flex(row, null, null);
+            border-bottom: 1px solid rgba(50, 50, 50, 0.3);
+
+            // MEDIA QUERY
+            @include responsive(mobile) {
+                @include flex(column, null, null);
+            }
+
+            .sinistra-img {
+                .mobile-title {
+                    font-weight: bold;
+                    display: none;
+                    @include responsive(mobile) {
+                        display: block;
+                    }
+                }
+
+                @include responsive(mobile) {
+                    margin: 20px 0;
+                }
+
+                @include flex(row, null, center);
+                flex-basis: 40%;
+                .sponsor {
+                    width: 100%;
+                    position: relative;
+                    .tagsponsor {
+                        position: absolute;
+                        bottom: 101%;
+                        border-radius: 5px;
+                        color: white;
+                        font-size: 0.7rem;
+                        // transform: translateX(50%);
+                        padding: 0.5rem;
+                        background-color: #ff385c;
+                        @include responsive(mobile) {
+                            right: 0%;
+                        }
+                    }
+                }
+                a {
+                    margin: 20px 0px;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+
+            .destra-testo {
+                margin: 20px 0px 20px 20px;
+                @include flex(column, flex-start, null);
+                flex-basis: 60%;
+                line-height: 200%;
+
+                // MEDIA QUERY
+                @include responsive(mobile) {
+                    display: none;
+                }
+
+                // a:first-of-type {
+                //     margin-bottom: 20px;
+                // }
+            }
+        }
+        .errore {
+            background-color: white;
+            position: absolute;
+            width: 100%;
+            height: 280px;
+            text-align: center;
+            line-height: 280px;
+        }
+    } // FINE del contenitore di sinistra
+
+    .right-section {
+        width: 55%;
+        background-size: cover;
+
+        // MEDIA QUERY
+        @include responsive(tablet) {
+            display: none;
+        }
+
+        .map {
+            height: 100%;
+            width: 100%;
+        }
+    } // FINE del contenitore di destra
+} // FINE SEARCH PAGE

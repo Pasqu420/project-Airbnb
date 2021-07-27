@@ -1,0 +1,122 @@
+section#register-jumbotron {
+    background-color: $black;
+    color: $white;
+
+    .jumbotron {
+        background-color: $black;
+        padding: 40px 0;
+        @include flex(row, center, center);
+
+        @include responsive(mobile) {
+            @include flex(column, center, center);
+        }
+        .wrapper-text {
+            color: $white;
+            flex-basis: 60%;
+            padding: 0 50px;
+
+            @include responsive(mobile) {
+                width: 100%;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 60px;
+            }
+        }
+
+        #carousel {
+            flex-basis: 50%;
+            @include responsive(mobile) {
+                width: 100%;
+            }
+
+            .carousel {
+                height: 350px;
+                margin: 0 50px;
+
+                .wrapper-images {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    overflow: hidden;
+
+                    .slide {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            .slide-left-enter-active,
+            .slide-left-leave-active {
+                transition: all 2s;
+            }
+
+            .slide-left-enter {
+                transform: translateX(100%);
+            }
+
+            .slide-left-leave-to {
+                transform: translate(-100%);
+            }
+        }
+    }
+}
+
+section#section-register {
+    margin: 50px 0;
+
+    .container {
+        @include flex(column, center, center);
+    }
+
+    form {
+        width: 40%;
+        @include flex(column, center, center);
+
+        .form-wrapper-fields {
+            margin: 5px;
+        }
+
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+
+        input {
+            width: 150px;
+            background-color: $aggron-light-gray;
+            padding: 5px 10px;
+            border: 0;
+            border-radius: 20px;
+        }
+
+        input:focus {
+            outline: 0;
+        }
+
+        .form-button {
+            background-color: $venusaur-green;
+            padding: 10px 20px;
+            border: 0;
+            border-radius: 20px;
+            color: $white;
+            font-weight: 600;
+        }
+
+        .form-errors {
+            font-size: 12px;
+        }
+
+        .error {
+            border: 2px solid #f44336;
+        }
+    }
+}
